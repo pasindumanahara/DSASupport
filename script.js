@@ -1,7 +1,7 @@
 const PRESETS = {
-  original: [1, 2, 3, 4, 5, 6],
-  reverse: [6, 5, 4, 3, 2, 1],
-  custom: [3, 1, 6, 2, 5, 4]
+  original: [1, 2, 3, 4, 5],
+  reverse: [ 5, 4, 3, 2, 1],
+  custom: [3, 1, 2, 5, 4]
 };
 
 const els = {

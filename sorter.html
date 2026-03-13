@@ -15,7 +15,7 @@
   <main class="container visualizer-page">
     <section class="toolbar card">
       <div class="toolbar-row">
-        <label>
+        <label class="wide">
           <span>Algorithm</span>
           <select id="algorithmSelect">
             <option value="bubble">Bubble Sort</option>
@@ -27,18 +27,18 @@
           </select>
         </label>
 
-        <label>
+        <label class="wide">
           <span>Order Preset</span>
           <select id="presetSelect">
-            <option value="custom">Custom [3,1,6,2,5,4]</option>
-            <option value="original">Original [1,2,3,4,5,6]</option>
-            <option value="reverse">Reverse [6,5,4,3,2,1]</option>
+            <option value="custom">Custom [ 3,1,2,5,4 ]</option>
+            <option value="original">Original [ 1,2,3,4,5]</option>
+            <option value="reverse">Reverse [ 5,4,3,2,1 ]</option>
           </select>
         </label>
 
         <label class="array-input-wrap wide">
           <span>Array Values</span>
-          <input id="arrayInput" type="text" value="3,1,6,2,5,4" />
+          <input id="arrayInput" type="text"  placeholder='Enter any six numbers seperated with commas'/>
         </label>
       </div>
 
