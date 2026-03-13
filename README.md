@@ -32,20 +32,6 @@ You can:
 - reset and try again
 - read the **step log** and current state metadata
 
-### Trees & Graphs Visualizer
-- Binary Tree visualization
-- Graph visualization
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS)
-
-You can:
-- load your own tree or graph input
-- use sample structures
-- set a **start node**
-- set a **target node**
-- watch traversal step by step
-- track **frontier**, **visited**, and **current** node states
-
 ## Tech Stack
 
 - **HTML**
