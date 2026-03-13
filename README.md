@@ -1,36 +1,67 @@
-# 📊 DSA Visualizer
+# DSA Support
 
-A simple and interactive **Data Structures and Algorithms Visualizer** built to help understand how algorithms work step by step through animations.
+Interactive **Data Structures & Algorithms Visualizer** built for learning DSA concepts step by step through animations, visual states, and readable execution logs.
 
-## 🚀 Features
-- Visualize popular algorithms in real time
-- Step-by-step execution
-- Clean and intuitive UI
-- Adjustable speed (optional)
-- Educational focus for learning DSA concepts
+## Overview
 
-## 🧠 Algorithms Included
-### Sorting Algorithms
+DSA Support is a browser-based educational project that helps students understand how common algorithms and data structures work visually.
+
+The project currently includes:
+
+- A **Sorting Visualizer** with step-by-step playback
+- A **Trees & Graphs Visualizer** with BFS and DFS traversal
+- A simple homepage that introduces the labs and learning goals
+
+## Features
+
+### Sorting Visualizer
 - Bubble Sort
 - Selection Sort
 - Insertion Sort
 - Merge Sort
 - Quick Sort
+- Shell Sort
 
-### Searching Algorithms
-- Linear Search
-- Binary Search
+You can:
+- load a custom array
+- use preset arrays
+- shuffle values
+- prepare the algorithm first
+- move **one step at a time**
+- use **auto play**
+- reset and try again
+- read the **step log** and current state metadata
 
-## 🛠️ Tech Stack
-- Language: (Add your language)
-- Framework/Library: (Add if any)
-- Tools: (Optional)
+### Trees & Graphs Visualizer
+- Binary Tree visualization
+- Graph visualization
+- Breadth-First Search (BFS)
+- Depth-First Search (DFS)
 
-## 📦 Installation
+You can:
+- load your own tree or graph input
+- use sample structures
+- set a **start node**
+- set a **target node**
+- watch traversal step by step
+- track **frontier**, **visited**, and **current** node states
+
+## Tech Stack
+
+- **HTML**
+- **CSS**
+- **JavaScript**
+
+No external framework is required. The project runs directly in the browser.
+
+## Project Structure
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/dsa-visualizer.git
-
-# Go into the project folder
-cd dsa-visualizer
+DSASupport/
+├── index.html          # Homepage
+├── sorter.html         # Sorting visualizer page
+├── structures.html     # Trees & graphs visualizer page
+├── script.js           # Sorting visualizer logic
+├── structures.js       # Trees & graphs logic
+├── styles.css          # Shared styling
+└── resources/          # Images / assets
