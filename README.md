@@ -2,10 +2,10 @@
 
 Interactive **Data Structures & Algorithms Visualizer** built for learning DSA concepts step by step through animations, visual states, and readable execution logs.
 ### Home Page
-<img src="resources/homepage.png" alt="Home Page" width="220">
+<img src="resources/homepage.png" alt="Home Page" width="440">
 
 ### Sorting Page
-<img src="resources/sorting.png" alt="Sorting Page" width="220">
+<img src="resources/sorting.png" alt="Sorting Page" width="440">
 
 ## Overview
 
@@ -14,7 +14,6 @@ DSA Support is a browser-based educational project that helps students understan
 The project currently includes:
 
 - A **Sorting Visualizer** with step-by-step playback
-- A **Trees & Graphs Visualizer** with BFS and DFS traversal
 - A simple homepage that introduces the labs and learning goals
 
 ## Features
@@ -36,20 +35,6 @@ You can:
 - use **auto play**
 - reset and try again
 - read the **step log** and current state metadata
-
-### Trees & Graphs Visualizer
-- Binary Tree visualization
-- Graph visualization
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS)
-
-You can:
-- load your own tree or graph input
-- use sample structures
-- set a **start node**
-- set a **target node**
-- watch traversal step by step
-- track **frontier**, **visited**, and **current** node states
 
 ## Tech Stack
 
