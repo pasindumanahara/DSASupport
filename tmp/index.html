@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball Order Animation</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Ball Order Visualizer</h2>
+
+        <div id="ball-container" class="ball-container"></div>
+
+        <div class="controls">
+            <button onclick="setOrder([1,2,3,4,5,6])">Original</button>
+            <button onclick="setOrder([6,5,4,3,2,1])">Reverse</button>
+            <button onclick="setOrder([3,1,6,2,5,4])">Custom</button>
+            <button onclick="shuffleBalls()">Shuffle</button>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById("ball-container");
+
+        let currentOrder = [1, 2, 3, 4, 5, 6];
+
+        // initial render
+        renderBalls(currentOrder);
+
+        function renderBalls(order) {
+            container.innerHTML = "";
+
+            order.forEach((num) => {
+                const ball = document.createElement("div");
+                ball.className = "ball";
+                ball.dataset.key = num;
+                ball.textContent = num;
+                container.appendChild(ball);
+            });
+        }
+
+        function setOrder(newOrder) {
+            animateReorder(newOrder);
+            currentOrder = [...newOrder];
+        }
+
+        function shuffleBalls() {
+            const shuffled = [...currentOrder].sort(() => Math.random() - 0.5);
+            setOrder(shuffled);
+        }
+
+        function animateReorder(newOrder) {
+            const oldBalls = [...container.children];
+            const oldPositions = new Map();
+
+            oldBalls.forEach((ball) => {
+                oldPositions.set(ball.dataset.key, ball.getBoundingClientRect());
+            });
+
+            // rebuild in new order
+            renderBalls(newOrder);
+
+            const newBalls = [...container.children];
+
+            newBalls.forEach((ball) => {
+                const key = ball.dataset.key;
+                const oldPos = oldPositions.get(key);
+                const newPos = ball.getBoundingClientRect();
+
+                const dx = oldPos.left - newPos.left;
+                const dy = oldPos.top - newPos.top;
+
+                ball.style.transform = `translate(${dx}px, ${dy}px)`;
+            });
+
+            requestAnimationFrame(() => {
+                newBalls.forEach((ball) => {
+                    ball.style.transform = "translate(0, 0)";
+                });
+            });
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .wrapper {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .ball-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            min-height: 120px;
+            margin: 30px auto;
+        }
+
+        .ball {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            transition: transform 0.6s ease;
+        }
+    </style>
+</body>
+
+</html>
