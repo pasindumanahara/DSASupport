@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting Visualizer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="page-topbar container">
+    <a class="back-link" href="index.html">← Home</a>
+    <h1>Sorting Visualizer</h1>
+  </header>
+
+  <main class="container visualizer-page">
+    <section class="toolbar card">
+      <div class="toolbar-row">
+        <label>
+          <span>Algorithm</span>
+          <select id="algorithmSelect">
+            <option value="bubble">Bubble Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="quick">Quick Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="shell">Shell Sort</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Order Preset</span>
+          <select id="presetSelect">
+            <option value="custom">Custom [3,1,6,2,5,4]</option>
+            <option value="original">Original [1,2,3,4,5,6]</option>
+            <option value="reverse">Reverse [6,5,4,3,2,1]</option>
+          </select>
+        </label>
+
+        <label class="array-input-wrap wide">
+          <span>Array Values</span>
+          <input id="arrayInput" type="text" value="3,1,6,2,5,4" />
+        </label>
+      </div>
+
+      <div class="button-row">
+        <button id="loadBtn">Load Array</button>
+        <button id="shuffleBtn">Shuffle</button>
+        <button id="prepareBtn">Prepare Sort</button>
+        <button id="nextBtn" disabled>Next Step</button>
+        <button id="autoBtn" disabled>Auto Play</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </section>
+
+    <section class="ball-stage card">
+      <div id="ball-container" class="ball-container"></div>
+    </section>
+
+    <section class="panel-grid">
+      <section class="card">
+        <h2>Current Step</h2>
+        <div id="status" class="status-line">Load an array, choose an algorithm, then click Prepare Sort.</div>
+        <div class="meta-grid">
+          <div><strong>Current array:</strong> <span id="arrayView">[3, 1, 6, 2, 5, 4]</span></div>
+          <div><strong>Step number:</strong> <span id="stepCount">0</span></div>
+          <div><strong>Focus A:</strong> <span id="metaA">-</span></div>
+          <div><strong>Focus B:</strong> <span id="metaB">-</span></div>
+          <div><strong>Focus C:</strong> <span id="metaC">-</span></div>
+        </div>
+        <div class="legend">
+          <div class="tag"><span class="dot default"></span> Normal</div>
+          <div class="tag"><span class="dot accent1"></span> Primary Focus</div>
+          <div class="tag"><span class="dot accent2"></span> Secondary Focus</div>
+          <div class="tag"><span class="dot accent3"></span> Compare / Write</div>
+          <div class="tag"><span class="dot swap"></span> Swap / Shift</div>
+          <div class="tag"><span class="dot insert"></span> Insert / Fixed</div>
+          <div class="tag"><span class="dot sorted"></span> Sorted</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Step Log</h2>
+        <div id="log" class="log"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

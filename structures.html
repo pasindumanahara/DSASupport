@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trees & Graphs Visualizer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="page-topbar container">
+    <div class="page-links">
+      <a class="back-link" href="index.html">← Home</a>
+      <a class="back-link" href="sorter.html">Sorting</a>
+    </div>
+    <h1>Trees & Graphs Visualizer</h1>
+  </header>
+
+  <main class="container visualizer-page">
+    <section class="toolbar card">
+      <div class="toolbar-row">
+        <label>
+          <span>Structure</span>
+          <select id="structureType">
+            <option value="tree">Binary Tree</option>
+            <option value="graph">Graph</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Search Algorithm</span>
+          <select id="searchType">
+            <option value="bfs">Breadth-First Search (BFS)</option>
+            <option value="dfs">Depth-First Search (DFS)</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Start Node</span>
+          <input id="startNodeInput" type="text" value="A" />
+        </label>
+
+        <label>
+          <span>Target Node</span>
+          <input id="targetNodeInput" type="text" value="F" />
+        </label>
+      </div>
+
+      <div class="toolbar-row structure-inputs">
+        <label class="wide" id="treeInputWrap">
+          <span>Tree Level Order</span>
+          <input id="treeInput" type="text" value="A,B,C,D,E,null,F" />
+        </label>
+
+        <label class="wide hidden" id="graphInputWrap">
+          <span>Graph Edges</span>
+          <input id="graphInput" type="text" value="A-B, A-C, B-D, C-E, D-F, E-G" />
+        </label>
+      </div>
+
+      <div class="button-row">
+        <button id="loadStructureBtn">Load Structure</button>
+        <button id="sampleBtn">Load Sample</button>
+        <button id="prepareSearchBtn">Prepare Search</button>
+        <button id="nextSearchBtn" disabled>Next Step</button>
+        <button id="autoSearchBtn" disabled>Auto Play</button>
+        <button id="resetSearchBtn">Reset</button>
+      </div>
+    </section>
+
+    <section class="card structure-stage">
+      <div id="vizContainer" class="viz-container"></div>
+    </section>
+
+    <section class="panel-grid">
+      <section class="card">
+        <h2>Current Step</h2>
+        <div id="searchStatus" class="status-line">Choose a structure and search method, then click Prepare Search.</div>
+        <div class="meta-grid">
+          <div><strong>Structure:</strong> <span id="metaStructure">-</span></div>
+          <div><strong>Step number:</strong> <span id="searchStepCount">0</span></div>
+          <div><strong>Current node:</strong> <span id="metaNode">-</span></div>
+          <div><strong>Frontier:</strong> <span id="metaFrontier">-</span></div>
+          <div><strong>Visited:</strong> <span id="metaVisited">-</span></div>
+        </div>
+        <div class="legend">
+          <div class="tag"><span class="dot default"></span> Normal</div>
+          <div class="tag"><span class="dot accent1"></span> Start</div>
+          <div class="tag"><span class="dot accent2"></span> Target</div>
+          <div class="tag"><span class="dot accent3"></span> Current</div>
+          <div class="tag"><span class="dot insert"></span> Frontier</div>
+          <div class="tag"><span class="dot sorted"></span> Visited / Found</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Step Log</h2>
+        <div id="searchLog" class="log"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="structures.js"></script>
+</body>
+</html>
