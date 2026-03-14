@@ -86,10 +86,10 @@ This project is designed to help learners:
 ### Screeshots
 
 **Home Page**
-<img src="resources/homepage.png" alt="Home Page" width="440">
+<br><img src="resources/homepage.png" alt="Home Page" width="440">
 
 **Sorting Page**
-<img src="resources/sorting.png" alt="Sorting Page" width="440">
+<br><img src="resources/sorting.png" alt="Sorting Page" width="440">
 
 ### Contributing
 
